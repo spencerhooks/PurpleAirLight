@@ -30,6 +30,9 @@ NTPClient timeClient(ntpUDP);
 // strandtest example for more information on possible values.
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
+
+
+
 void setup() {
 
 #ifdef DEBUG
@@ -73,6 +76,9 @@ void setup() {
   else timeClient.setTimeOffset(-28800);          // Set timezone offset for standard time
 }
 
+
+
+
 // Function that calculates the air quality index from the PM2.5 value.
 // Calculation is from Purple Air https://docs.google.com/document/d/15ijz94dXJ-YAZLi9iZ_RaBwrZ4KtYeCy08goGBwnbCU/edit#
 float calcAQI(float Cp, float Ih, float Il, float BPh, float BPl) {
@@ -82,6 +88,9 @@ float calcAQI(float Cp, float Ih, float Il, float BPh, float BPl) {
   result = (((Ih - Il) / roundf((BPh - BPl)) * (Cp - BPl) + Il));
   return result;
 }
+
+
+
 
 void loop() {
   // Check WiFi Status
